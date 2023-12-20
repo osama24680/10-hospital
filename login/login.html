@@ -74,9 +74,10 @@
           <h5>Login</h5>
 
           <div class="inputs">
-            <input type="text" placeholder="user name" />
-            <br />
-            <input type="password" placeholder="password" />
+            <input type="email" placeholder="Email" class="loginEmail"/>
+            
+            <input type="password" placeholder="password" class="loginPassword"/>
+            <p class="unFoundEmail"></p>
           </div>
 
           <br /><br />
@@ -88,11 +89,10 @@
                 Don't you have an account? <a href="/register.html">Register</a>
               </p>
             </label>
-            <p>forget password?</p>
           </div>
 
           <br />
-          <button>Login</button>
+          <button class="onSubmitLogin">Login</button>
         </div>
       </div>
     </div>
@@ -102,5 +102,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="./login.js"></script>
   </body>
 </html>

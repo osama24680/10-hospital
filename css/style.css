@@ -702,6 +702,43 @@ section:nth-child(even) {
   margin: 10px 0;
   position: relative;
 }
+
+.regPaNameError,
+.regDoctorOasswordError,
+.regDoctorMailError,
+.regDoctorSpecializationError,
+.regDoctorNameError {
+  color: red;
+  display: none;
+  text-transform: lowercase;
+}
+.regPaMailError {
+  color: red;
+  display: none;
+  text-transform: lowercase;
+}
+.regPaPasswordError {
+  color: red;
+  display: none;
+  text-transform: lowercase;
+}
+.goToLoginPage {
+  color: green;
+  text-align: center;
+  font-size: 15px;
+  display: none;
+}
+
+.passwordEye {
+  position: absolute;
+  right: 7%;
+  top: 30%;
+  cursor: pointer;
+}
+.unFoundEmail {
+  color: red !important;
+  margin-top: 10px;
+}
 .form-content .input-box input {
   height: 100%;
   width: 100%;
@@ -917,10 +954,11 @@ label {
 .leadersImages {
   display: flex;
   justify-content: flex-start;
-  gap: 60px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 .leadersImages_image {
-  width: 30%;
+  width: 23%;
 }
 
 .leadersImages_image img {
@@ -1025,51 +1063,49 @@ table tbody tr th {
 table tbody tr td img {
   width: 70px;
 }
-.callBtn,.details {
+.callBtn,
+.details {
   padding: 5px 30px;
   border: 2px solid var(--green);
   border-radius: 20px;
 }
 
 /* ********************************************services**************************** */
-.ideas{
+.ideas {
   background-color: #20ecc4;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 120px 90px 0 90px;
- 
-
 }
-.ideas div{
+.ideas div {
   width: 30%;
   text-align: center;
 }
-.ideas div h2{
+.ideas div h2 {
   font-size: 33px;
   position: relative;
-  color:#776f6f;
+  color: #776f6f;
 }
-.ideas div h2::after{
-  content:"";
+.ideas div h2::after {
+  content: "";
   position: absolute;
-  bottom:-10px;
-  left:50%;
+  bottom: -10px;
+  left: 50%;
   transform: translateX(-50%);
   width: 150px;
   height: 2px;
   background-color: #776f6f;
-
 }
-.ideas div i{
+.ideas div i {
   margin-top: 30px;
   font-size: 50px;
 }
-.ideas div p{
+.ideas div p {
   margin-top: 20px;
   font-size: 14px;
 }
-.servicesForm{
+.servicesForm {
   background-color: #20ecc4;
 }
 /* remove arrows from input number */
@@ -1080,7 +1116,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 .formbold-main-wrapper {

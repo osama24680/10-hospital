@@ -66,7 +66,6 @@
       </div>
     </nav>
 
-
     <div class="body">
       <div class="container">
         <input type="checkbox" id="flip" />
@@ -100,27 +99,54 @@
                 <div class="input-boxes">
                   <div class="input-box">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Enter your name" required required/>
+                    <input
+                      type="text"
+                      placeholder="Enter your name"
+                      required
+                      required
+                      class="regPaName"
+                    />
                   </div>
+                  <p class="regPaNameError">Enter a valid name</p>
                   <div class="input-box">
                     <i class="fas fa-envelope"></i>
                     <input
                       type="text"
                       placeholder="Enter your email"
                       required
+                      class="regPaMail"
                     />
                   </div>
+                  <p class="regPaMailError">Enter a valid E-mail</p>
                   <div class="input-box">
                     <i class="fas fa-lock"></i>
                     <input
                       type="password"
                       placeholder="Enter your password"
                       required
+                      class="regPaPassword"
+                    />
+                    <div class="passwordEye">
+                      <i class="fa-solid fa-eye"></i>
+                    </div>
+                  </div>
+                  <p class="regPaPasswordError">
+                    <strong>Enter a strong password</strong> <br />Password
+                    should be 8 character minimum <br />At least 3 capital
+                    letters <br />At least 3 lower letters <br />At least 1
+                    special character
+                  </p>
+                  <div class="button input-box">
+                    <input
+                      id="onSubmitRegisterPatients"
+                      type="submit"
+                      value="Sumbit"
                     />
                   </div>
-                  <div class="button input-box">
-                    <input type="submit" value="Sumbit" />
-                  </div>
+                  <p class="goToLoginPage">
+                    Congratulations!!
+                    <a href="../login/login.html">Go To Login Page</a>
+                  </p>
                   <div class="text sign-up-text">
                     You are not a patient?
                     <label for="flip">Register for Doctors</label>
@@ -128,43 +154,86 @@
                 </div>
               </form>
             </div>
+
+
+
+
+
             <div class="signup-form">
               <div class="title">Doctors Register</div>
               <form action="#">
                 <div class="input-boxes">
                   <div class="input-box">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Enter your name" required />
+                    <input
+                      type="text"
+                      placeholder="Enter your name"
+                      required
+                      class="regDoctorName"
+                    />
                   </div>
+                  <p class="regDoctorNameError">Enter a valid name</p>
+
+
+                  
                   <div class="input-box">
                     <i class="fa-solid fa-user-doctor"></i>
                     <input
                       type="text"
                       placeholder="Enter your specialization"
                       required
+                      class="regDoctorSpecialization"
                     />
                   </div>
+                  <p class="regDoctorSpecializationError">Enter a valid specialization</p>
+
+
+
+
+
+
                   <div class="input-box">
                     <i class="fas fa-envelope"></i>
                     <input
                       type="text"
                       placeholder="Enter your email"
                       required
+                      class="regDoctorMail"
                     />
                   </div>
+                  <p class="regDoctorMailError">Enter a valid E-mail</p>
+
+
+
+
+
                   <div class="input-box">
                     <i class="fas fa-lock"></i>
                     <input
                       type="password"
                       placeholder="Enter your password"
                       required
+                      class="regDoctorPassword"
+                    />
+                    <div class="passwordEyeLogin">
+                      <i class="fa-solid fa-eye"></i>
+                    </div>
+                  </div>
+                  <p class="regDoctorOasswordError">Enter a valid Password</p>
+                  <div class="button input-box">
+                    <input
+                      id="onSubmitRegisterDoctors"
+                      type="submit"
+                      value="Sumbit"
                     />
                   </div>
-                  <div class="button input-box">
-                   <a href="../doctors/doctors.html">Submit</a>
-                  </div>
+                  <p class="goToLoginPage">
+                    Congratulations!!
+                    <a href="../login/login.html">Go To Login Page</a>
+                  </p>
                   <div class="text sign-up-text">
-                    You are not a patient? <label for="flip">Register for Patients</label>
+                    You are not a patient?
+                    <label for="flip">Register for Patients</label>
                   </div>
                 </div>
               </form>
@@ -179,5 +248,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="../main.js"></script>
   </body>
 </html>
