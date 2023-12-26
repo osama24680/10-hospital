@@ -836,7 +836,19 @@ section:nth-child(even) {
   width: 50%;
   margin: auto;
 }
-
+.welcomeUser{
+  font-weight: bold;
+  color: rgb(244, 244, 246) ;
+  cursor: pointer;
+}
+.regLog{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logout{
+  cursor: pointer;
+}
 .box-form {
   margin: 0 auto;
   width: 60%;

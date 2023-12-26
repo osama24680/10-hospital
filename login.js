@@ -12,9 +12,6 @@ if (localStorage.getItem("localUsers") == null) {
 }
 
 onSubmitLogin.addEventListener("click", function () {
- 
-  console.log(allUsers);
-
   let loginEmailFound = 0;
   let loginPasswordFound = 0;
   let userName = "";
@@ -23,47 +20,47 @@ onSubmitLogin.addEventListener("click", function () {
   if (loginEmail.value.trim() == "" && loginPassword.value.trim() == "") {
     unFoundEmail.style.display = "block";
     unFoundEmail.innerHTML = "please enter your email and password";
-  
-  } else if (loginEmail.value == "") {
-    unFoundEmail.innerHTML = "please enter email";
+  } else if (loginEmail.value.trim() == "") {
     unFoundEmail.style.display = "block";
-  } else if (loginPassword.value == "") {
-    unFoundEmail.innerHTML = "please enter password";
+    unFoundEmail.innerHTML = "please enter your email";
+  } else if (loginPassword.value.trim() == "") {
+    unFoundEmail.innerHTML = "please enter your password";
     unFoundEmail.style.display = "block";
   } else {
-  
     for (let i = 0; i < allUsers.length; i++) {
-      if (loginEmail.value == allUsers[i].signEmailData) {
+      if (loginEmail.value.trim() == allUsers[i].signEmailData) {
         loginEmailFound++;
-        userName = allUsers[i].signNameData;
+        userName = allUsers[i].signNameData.split(" ")[0];
         specialisation = allUsers[i]?.specialisation;
       }
       if (loginPassword.value == allUsers[i].signPasswordData) {
         loginPasswordFound++;
-        userName = allUsers[i].signNameData;
+        userName = allUsers[i].signNameData.split(" ")[0];
         specialisation = allUsers[i]?.specialisation;
       }
     }
 
     if (loginEmailFound > 0 && loginPasswordFound > 0) {
       //email and password are found
-      localStorage.setItem("username", userName);
-      if(specialisation){
-        window.location.href = "../doctors/doctors.html";
-      }else{
-        window.location.href = "../index.html";
-      }
-     
       unFoundEmail.style.display = "none";
+      localStorage.setItem("username", userName);
+      localStorage.setItem("specialisation", specialisation);
+
+      if (specialisation) {
+        window.location.href = "/doctors/doctors.html";
+      } else {
+        window.location.href = "/index.html";
+      }
     } else if (loginPasswordFound == 0 && loginEmailFound > 0) {
       //only email is found
-      unFoundEmail.innerHTML = "wrong password";
       unFoundEmail.style.display = "block";
+      unFoundEmail.innerHTML = "wrong password";
     } else if (loginPasswordFound > 0 && loginEmailFound == 0) {
       //only password is found
-      unFoundEmail.innerHTML = "wrong Email";
       unFoundEmail.style.display = "block";
+      unFoundEmail.innerHTML = "wrong Email";
     }
   }
   loginEmailFound = 0;
+  loginPasswordFound = 0;
 });

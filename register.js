@@ -1,5 +1,3 @@
-console.log("regPaPassword");
-let Details = document.querySelectorAll(".details");
 let regPaNameError = document.querySelector(".regPaNameError");
 let regPaMailError = document.querySelector(".regPaMailError");
 let regPaPasswordError = document.querySelector(".regPaPasswordError");
@@ -31,20 +29,9 @@ let passwordEye = document.querySelector(".passwordEye");
 let passwordEyeLogin = document.querySelector(".passwordEyeLogin");
 let goToLoginPage = document.querySelector(".goToLoginPage");
 
-// * open window of analytics
-for (let i = 0; i < Details.length; i++) {
-  Details[i].addEventListener("click", function () {
-    window.open(
-      "https://thingspeak.com/channels/2382138",
-      "_blank",
-      "width=1000,height=800"
-    );
-  });
-}
-
 // * -------------------------------------------------Validation for Register Patients-------------------------------------------------
 
-const regexPatientName = /^[a-zA-Z]{3,20}$/;
+const regexPatientName = /^[a-zA-Z\s'-]+$/;
 const regexPatientEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const regexPatientPassword =
   /^(?=(.*[a-z]){3,})(?=(.*[A-Z]){3,})(?=.*[\W_]).{8,}$/;
@@ -52,8 +39,10 @@ const regexPatientPassword =
 passwordEye.addEventListener("click", function () {
   regPaPassword.type = regPaPassword.type === "password" ? "text" : "password";
 });
+
 passwordEyeLogin.addEventListener("click", function () {
-  regDoctorPassword.type = regDoctorPassword.type === "password" ? "text" : "password";
+  regDoctorPassword.type =
+    regDoctorPassword.type === "password" ? "text" : "password";
 });
 
 // * localStorage
@@ -118,7 +107,6 @@ onSubmitRegisterPatients.addEventListener("click", function (e) {
     allUsers.push(userSignData);
     localStorage.setItem("localUsers", JSON.stringify(allUsers));
 
-    console.log("all flags ready");
     goToLoginPage.style.display = "block";
     window.location.href = "../login/login.html";
   } else {
